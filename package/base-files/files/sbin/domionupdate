@@ -1,0 +1,17 @@
+#!/bin/sh
+
+if [ -z "$SERVER_URL" ];
+then
+        echo "Please define SERVER_URL as environment variable"
+        exit
+fi
+
+wget -qq "$SERVER_URL" -O "/tmp/image.bin" 2>/dev/null
+if [ $? -ne 0 ]; then
+        echo "Error downloading system update"
+        exit
+fi
+echo "Performing system update. You're going to be disconnected soon."
+cd /tmp && sysupgrade image.bin
+
+
