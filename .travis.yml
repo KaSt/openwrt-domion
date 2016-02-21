@@ -1,0 +1,27 @@
+language: cpp
+
+sudo: false
+
+addons:
+  apt:
+    packages:
+    - subversion
+    - build-essential
+    - libncurses5-dev 
+    - zlib1g-dev gawk
+    - flex 
+    - quilt 
+    - git-core 
+    - unzip 
+    - libssl-dev
+
+script: ./domion-setup.sh
+
+cache:
+  directories:
+  - feeds
+  - package
+  - staging_dir
+  - build_dir
+  - dl
+
