@@ -4,7 +4,7 @@ scripts/feeds update -a
 scripts/feeds install domoticz
 
 #Horrible but quicker than forking the repo
-sed -i '' 's/+libxml2/+libxml2 +libubacktrace/g' feeds/packages/libs/db47/Makefile 
+sed -i 's/+libxml2/+libxml2 +libubacktrace/g' feeds/packages/libs/db47/Makefile 
 
 cp domion.config .config
 make defconfig
